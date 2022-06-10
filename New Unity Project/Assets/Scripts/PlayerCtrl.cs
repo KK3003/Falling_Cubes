@@ -71,7 +71,10 @@ public class PlayerCtrl : MonoBehaviour
             // show effect
             Debug.Log("Bomb");
 
-            Restart();
+            if (isShieldOn == false)
+            {
+                Restart();
+            }
 
         }
         else if (other.tag == "SizeD")
@@ -80,7 +83,7 @@ public class PlayerCtrl : MonoBehaviour
             // show effect
             Debug.Log("Size --");
 
-            sizeChange = new Vector3(1, 1, 0);
+            sizeChange = new Vector3(0.8f, 0.8f, 0);
             if(player.transform.localScale == sizeChange)
             {
                 player.transform.localScale = player.transform.localScale - sizeChangeD;
