@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     AudioSource bgAudio;
     public Text scoreT;
     public ScoreManager scoreM;
+    public GameObject left, right;
     
 
     // Start is called before the first frame update
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour
         bgAudio = player.GetComponent<AudioSource>();
         Time.timeScale = 1;
         bgAudio.Play();
+        Destroy(left, 3);
+        Destroy(right, 3);
     }
 
     // Update is called once per frame
